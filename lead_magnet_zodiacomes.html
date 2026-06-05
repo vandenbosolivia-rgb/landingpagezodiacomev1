@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guide des 12 Zodiacomes — Lead Magnet</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════
+   COULEURS PLANÉTAIRES PAR SIGNE
+   ♈ Bélier    → Mars       → Corail/Rouge    #E8503A / #FF6B4A
+   ♉ Taureau   → Vénus      → Vert émeraude   #2D7D4F / #4CAF7D
+   ♊ Gémeaux   → Mercure    → Jaune citron    #E8C832 / #FFE04A
+   ♋ Cancer    → Lune       → Blanc argenté   #8BA4C0 / #B8D0E8
+   ♌ Lion      → Soleil     → Or solaire      #E8A020 / #FFB830
+   ♍ Vierge    → Mercure    → Vert olive      #7A9A3A / #9ABE50
+   ♎ Balance   → Vénus      → Rose poudré     #D4708A / #E890A8
+   ♏ Scorpion  → Pluton     → Bordeaux profond #8B1A3A / #B02050
+   ♐ Sagittaire→ Jupiter    → Violet royal    #6B3DB5 / #8B5DD8
+   ♑ Capricorne→ Saturne    → Gris anthracite #4A4A5A / #6A6A7A
+   ♒ Verseau   → Uranus     → Bleu électrique #1A6AB5 / #2A8AE8
+   ♓ Poissons  → Neptune    → Bleu lavande    #6A5A9A / #8878C0
+═══════════════════════════════════════════ */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', sans-serif; background: #F8F4EE; color: #2A2440; font-size: 15px; line-height: 1.7; }
+
+/* ── COUVERTURE ── */
+.cover {
+  background: linear-gradient(145deg, #1A0A2E 0%, #2D1B5E 40%, #1A3060 100%);
+  min-height: 100vh;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 4rem 2rem;
+  position: relative; overflow: hidden;
+}
+.cover-stars {
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background-image:
+    radial-gradient(1px 1px at 20% 15%, rgba(255,255,255,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 80% 25%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 50% 60%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 15% 75%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 90% 80%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 35% 40%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 65% 90%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 75% 50%, rgba(255,255,255,0.3) 0%, transparent 100%);
+}
+.cover-zodiac-ring {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 600px; height: 600px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.cover-badge {
+  display: inline-block;
+  background: rgba(201,168,76,0.2);
+  border: 1px solid rgba(201,168,76,0.5);
+  color: #E8D49A;
+  font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+  padding: 6px 20px; border-radius: 20px; margin-bottom: 2rem;
+  position: relative; z-index: 1;
+}
+.cover-symbols {
+  font-size: 1.4rem; letter-spacing: 0.8rem;
+  color: rgba(255,255,255,0.25); margin-bottom: 2.5rem;
+  position: relative; z-index: 1;
+}
+.cover h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.2rem; line-height: 1.15; color: white;
+  margin-bottom: 1rem; font-weight: 700;
+  position: relative; z-index: 1;
+}
+.cover h1 em { color: #C9A84C; font-style: italic; }
+.cover-sub {
+  font-size: 1.1rem; color: rgba(255,255,255,0.65);
+  max-width: 560px; margin: 0 auto 3rem;
+  position: relative; z-index: 1;
+}
+.cover-cta {
+  display: inline-block;
+  background: linear-gradient(135deg, #C9A84C, #E8D49A);
+  color: #1A0A2E; font-weight: 500; font-size: 14px;
+  padding: 14px 36px; border-radius: 4px; text-decoration: none;
+  letter-spacing: 0.5px; position: relative; z-index: 1;
+}
+.cover-url { font-size: 12px; color: rgba(255,255,255,0.35); margin-top: 2rem; letter-spacing: 1px; position: relative; z-index: 1; }
+.cover-assoc { font-size: 11px; color: rgba(255,255,255,0.25); margin-top: 0.5rem; letter-spacing: 1px; position: relative; z-index: 1; }
+
+/* ── INTRO ── */
+.intro {
+  background: #FFF8F0;
+  padding: 4rem 3rem;
+  text-align: center;
+  border-bottom: 3px solid #E8D49A;
+}
+.intro-eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #C9A84C; margin-bottom: 1rem; }
+.intro h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: #1A0A2E; margin-bottom: 1.25rem; font-weight: 600; }
+.intro p { font-size: 15px; color: #5A5070; max-width: 680px; margin: 0 auto 1rem; line-height: 1.8; }
+.intro-georges {
+  background: white;
+  border-left: 4px solid #C9A84C;
+  border-radius: 0 8px 8px 0;
+  padding: 1.25rem 1.5rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  text-align: left;
+  font-style: italic;
+  color: #3A3060;
+  font-size: 14px;
+}
+.intro-georges cite { display: block; font-style: normal; font-size: 12px; color: #9A9AB0; margin-top: 0.5rem; font-weight: 500; }
+
+/* ── COMMENT UTILISER ── */
+.how-to {
+  background: #1A0A2E;
+  padding: 3rem;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+.how-item { text-align: center; }
+.how-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+.how-title { font-size: 13px; font-weight: 500; color: #E8D49A; margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 1px; }
+.how-desc { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+/* ── MODULE CARD ── */
+.module {
+  padding: 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+.module-banner {
+  padding: 2.5rem 3rem 2rem;
+  position: relative;
+}
+.module-num-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: rgba(0,0,0,0.15);
+  border-radius: 20px; padding: 4px 14px;
+  font-size: 11px; font-weight: 500; color: rgba(255,255,255,0.8);
+  letter-spacing: 1px; text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.module-symbol { font-size: 1.6rem; }
+.module-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem; font-weight: 700; color: white;
+  line-height: 1.1; margin-bottom: 0.5rem;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+.module-subtitle { font-size: 1rem; color: rgba(255,255,255,0.75); font-style: italic; font-family: 'Playfair Display', serif; }
+.module-planet-badge {
+  position: absolute; top: 2rem; right: 2.5rem;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 20px; padding: 5px 14px;
+  font-size: 11px; color: rgba(255,255,255,0.85);
+  letter-spacing: 1px;
+}
+
+.module-body { background: #FFF8F0; padding: 2.5rem 3rem; }
+
+.module-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+
+.module-section-title {
+  font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px;
+  font-weight: 500; margin-bottom: 0.75rem;
+  padding-bottom: 0.4rem; border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.module-section-title.immobilier { color: #2D7D4F; }
+.module-section-title.energie { color: #6B3DB5; }
+.module-section-title.georges { color: #C9A84C; }
+.module-section-title.question { color: #B02050; }
+
+.module-list { list-style: none; padding: 0; }
+.module-list li {
+  padding: 6px 0; border-bottom: 1px solid rgba(0,0,0,0.06);
+  font-size: 13.5px; color: #3A3060; display: flex; gap: 8px; align-items: flex-start;
+}
+.module-list li:last-child { border-bottom: none; }
+.module-list li::before { content: '→'; font-weight: 500; flex-shrink: 0; margin-top: 1px; }
+
+.module-phrase {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+}
+.module-phrase::before {
+  content: '❝';
+  font-size: 3rem; color: rgba(0,0,0,0.06);
+  position: absolute; top: 0.5rem; left: 1rem;
+  font-family: serif; line-height: 1;
+}
+.module-phrase-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem; font-style: italic;
+  line-height: 1.5; color: #2A2440;
+}
+.module-phrase-attr { font-size: 11px; color: #9A9AB0; margin-top: 0.5rem; text-transform: uppercase; letter-spacing: 1px; }
+
+.module-georges-box {
+  background: #FFF0E8;
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  font-size: 13px; font-style: italic; color: #5A3020;
+  border-left: 3px solid #C9A84C;
+}
+.module-georges-label { font-style: normal; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #C9A84C; font-weight: 500; margin-bottom: 0.3rem; }
+
+.module-question {
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  font-size: 14px; font-style: italic;
+  color: white;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+}
+
+.module-mireille {
+  background: #F8EEF8;
+  border: 1px solid #DDB8CC;
+  border-radius: 6px;
+  padding: 0.75rem 1.25rem;
+  font-size: 13px; font-style: italic; color: #5A2040;
+  margin-top: 1rem;
+}
+.module-mireille-label { font-style: normal; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #9B4D6E; font-weight: 500; margin-bottom: 0.2rem; }
+
+/* ── QUIZ PAGE ── */
+.quiz-page {
+  background: linear-gradient(135deg, #1A0A2E, #2D1B5E);
+  padding: 4rem 3rem;
+  text-align: center;
+}
+.quiz-page h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: white; margin-bottom: 0.75rem; }
+.quiz-page .sub { font-size: 14px; color: rgba(255,255,255,0.6); margin-bottom: 2.5rem; }
+.quiz-questions { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 800px; margin: 0 auto 2.5rem; }
+.quiz-q { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 1.5rem; text-align: left; }
+.quiz-q-title { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #C9A84C; margin-bottom: 1rem; font-weight: 500; }
+.quiz-option { display: flex; gap: 8px; align-items: center; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 13px; color: rgba(255,255,255,0.7); cursor: pointer; }
+.quiz-option:last-child { border-bottom: none; }
+.quiz-circle { width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,0.3); flex-shrink: 0; }
+
+/* ── PROGRAMME PAGE ── */
+.programme-page { background: #FFF8F0; padding: 4rem 3rem; text-align: center; }
+.programme-page h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: #1A0A2E; margin-bottom: 0.75rem; }
+.programme-page .sub { color: #5A5070; font-size: 14px; margin-bottom: 2.5rem; }
+.forfait-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 700px; margin: 0 auto 2rem; }
+.forfait { background: white; border: 1px solid #E2DFD6; border-radius: 10px; padding: 2rem; text-align: left; }
+.forfait.premium { border: 2px solid #C9A84C; position: relative; }
+.forfait-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #C9A84C; color: #1A0A2E; font-size: 10px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; padding: 3px 14px; border-radius: 20px; white-space: nowrap; }
+.forfait-name { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #1A0A2E; margin-bottom: 0.25rem; }
+.forfait-price { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #1A0A2E; font-weight: 700; }
+.forfait-price span { font-size: 0.85rem; font-weight: 400; color: #9A9AB0; font-family: 'DM Sans', sans-serif; }
+.forfait-features { list-style: none; padding: 0; margin-top: 1rem; }
+.forfait-features li { padding: 5px 0; font-size: 13px; border-bottom: 1px solid #F0EDE8; display: flex; gap: 8px; }
+.forfait-features li:last-child { border-bottom: none; }
+.feat-check { color: #2D7D4F; flex-shrink: 0; }
+.garantie { background: #E8F5EE; border: 1px solid #A8D4B8; border-radius: 6px; padding: 1rem 1.5rem; font-size: 13px; color: #1A5030; max-width: 700px; margin: 0 auto 2rem; }
+
+/* ── TEASER SAYNETTES ── */
+.teaser-page {
+  background: linear-gradient(135deg, #2D1B5E, #1A3060);
+  padding: 4rem 3rem; text-align: center;
+}
+.teaser-page h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: white; margin-bottom: 0.75rem; }
+.teaser-page .sub { color: rgba(255,255,255,0.6); font-size: 14px; margin-bottom: 2.5rem; }
+.network-badges { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem; }
+.net-badge { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); padding: 8px 20px; border-radius: 20px; font-size: 13px; color: rgba(255,255,255,0.8); }
+.sept-badge { background: linear-gradient(135deg, #C9A84C, #E8D49A); color: #1A0A2E; font-weight: 500; font-size: 1.1rem; padding: 1rem 3rem; border-radius: 6px; display: inline-block; margin-top: 1rem; }
+
+/* ── 4E COUVERTURE ── */
+.back-cover {
+  background: #1A0A2E;
+  padding: 4rem 3rem; text-align: center;
+}
+.back-cover .logo-zone { margin-bottom: 2rem; }
+.back-cover .tagline { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #C9A84C; font-style: italic; margin-bottom: 0.5rem; }
+.back-cover .assoc { font-size: 12px; color: rgba(255,255,255,0.3); letter-spacing: 1px; }
+.back-cover .url { font-size: 14px; color: rgba(255,255,255,0.5); margin-top: 1.5rem; }
+
+/* ── DIVISEUR ── */
+.divider { height: 6px; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 700px) {
+  .cover h1 { font-size: 2.2rem; }
+  .module-title { font-size: 1.8rem; }
+  .module-grid { grid-template-columns: 1fr; }
+  .quiz-questions { grid-template-columns: 1fr; }
+  .forfait-grid { grid-template-columns: 1fr; }
+  .how-to { grid-template-columns: 1fr 1fr; }
+  .module-banner, .module-body { padding: 2rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ COUVERTURE ═══ -->
+<div class="cover">
+  <div class="cover-stars"></div>
+  <div class="cover-zodiac-ring"></div>
+  <div class="cover-badge">Guide gratuit · Les Zodiacomes by AUTON'HOME</div>
+  <div class="cover-symbols">♈ ♉ ♊ ♋ ♌ ♍ ♎ ♏ ♐ ♑ ♒ ♓</div>
+  <h1>Les 12 <em>Zodiacomes</em><br>de la Vente</h1>
+  <p class="cover-sub">Découvrez les 12 guides qui accompagnent chaque étape de la vente de votre bien — et ce qu'ils révèlent sur vous.</p>
+  <a href="https://leszodiacomes.com" class="cover-cta">Télécharger gratuitement</a>
+  <div class="cover-url">LESZODIACOMES.COM</div>
+  <div class="cover-assoc">Les Zodiacomes by AUTON'HOME · Association loi 1908 · 22.05.2026</div>
+</div>
+
+<!-- ═══ INTRODUCTION ═══ -->
+<div class="intro">
+  <div class="intro-eyebrow">L'aventure commence ici</div>
+  <h2>Vendre sa maison, c'est bien plus qu'une transaction.</h2>
+  <p>Chaque étape de la vente immobilière cache une invitation à mieux vous connaître. Les Zodiacomes sont 12 guides — un par signe du zodiaque, un par étape — qui vous accompagnent depuis les diagnostics jusqu'à la signature finale.</p>
+  <p>Ils n'interviendront pas à votre place. Ils seront là, dans les coulisses de votre aventure, pour vous éclairer quand vous en avez le plus besoin.</p>
+  <div class="intro-georges">
+    « Je croyais que vendre ma maison était une affaire de papiers et de chiffres. Je n'avais pas imaginé ce que ça allait remuer en moi. Heureusement, je n'étais pas seul. »
+    <cite>— Georges, propriétaire accompagné par le programme AUTON'HOME</cite>
+  </div>
+  <p style="font-size:13px; color:#9A9AB0;">Ce guide est votre première rencontre avec les Zodiacomes. La suite de l'histoire de Georges arrive sur nos réseaux en septembre 2026.</p>
+</div>
+
+<!-- ═══ COMMENT UTILISER ═══ -->
+<div class="how-to">
+  <div class="how-item"><div class="how-icon">🔍</div><div class="how-title">Trouvez votre étape</div><div class="how-desc">Chaque module correspond à où vous en êtes dans votre projet de vente.</div></div>
+  <div class="how-item"><div class="how-icon">🌟</div><div class="how-title">Rencontrez le guide</div><div class="how-desc">Lisez l'énergie du signe et sa phrase emblématique. Elle est là pour vous.</div></div>
+  <div class="how-item"><div class="how-icon">🏡</div><div class="how-title">Agissez concrètement</div><div class="how-desc">3 actions immobilières précises pour avancer dès aujourd'hui.</div></div>
+  <div class="how-item"><div class="how-icon">💫</div><div class="how-title">Introspection</div><div class="how-desc">Une question pour regarder en vous ce que cette étape éveille.</div></div>
+</div>
+
+<!-- ═══════════════════════════════════
+     MODULE 1 — LE BÉLIER — DIAGNOSTICS
+     Planète : Mars · Couleur : Corail/rouge ardent
+════════════════════════════════════════ -->
+<div class="module">
+  <div class="module-banner" style="background: linear-gradient(135deg, #C8402A 0%, #E8603A 50%, #FF7850 100%);">
+    <div class="module-num-badge"><span>Étape</span><span style="font-size:1.1rem;">01</span></div>
+    <div class="module-planet-badge">♂ Mars</div>
+    <div class="module-symbol">♈</div>
+    <div class="module-title">Le Bélier</div>
+    <div class="module-subtitle">Les Diagnostics Immobiliers</div>
+  </div>
+  <div class="module-body">
+    <div class="module-phrase" style="border-top: 3px solid #E8603A;">
+      <div class="module-phrase-text">« Le signe qui fonce. Mais qui fonce préparé. »</div>
+      <div class="module-phrase-attr">Le Bélier · Étape 1</div>
+    </div>
+    <div class="module-grid">
+      <div>
+        <div class="module-section-title immobilier" style="color:#C8402A;">Ce que cette étape vous demande</div>
+        <ul class="module-list">
+          <li>Commander vos diagnostics AVANT la mise en vente</li>
+          <li>Constituer votre Dossier de Diagnostic Technique (DDT)</li>
+          <li>Identifier les diagnostics selon votre bien (DPE, amiante, plomb, gaz, électricité…)</li>
+        </ul>
+      </div>
+      <div>
+        <div class="module-section-title energie" style="color:#C8402A;">L'énergie du Bélier</div>
+        <ul class="module-list">
+          <li>Premier signe du zodiaque — il ouvre le cycle</li>
+          <li>Énergie martienne : action, courage, initiative</li>
+          <li>Sa leçon : l'audace sans préparation mène à l'impasse</li>
+        </ul>
+      </div>
+    </div>
+    <div class="module-georges-box">
+      <div class="module-georges-label">L'histoire de Georges</div>
+      « Je regardais mon écran depuis deux heures. ''Vendre sa maison… les diagnostics… la loi… pfff.'' C'est là que Mireille est arrivée avec son balai — et le flyer des Zodiacomes. »
+    </div>
+    <div class="module-question" style="background: linear-gradient(135deg, #C8402A, #E8603A);">
+      Quelle vérité sur votre bien préférez-vous ne pas regarder en face ?
+    </div>
+    <div class="module-mireille">
+      <div class="module-mireille-label">Mireille dit</div>
+      « Y'en a pas qu'un seul, vous savez. Mais le diagnostiqueur connaît son métier. Vous, vous préparez juste les papiers. »
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     MODULE 2 — LE TAUREAU — ESTIMATION
+     Planète : Vénus · Couleur : Vert émeraude
+════════════════════════════════════════ -->
+<div class="module">
+  <div class="module-banner" style="background: linear-gradient(135deg, #1A6040 0%, #2D7D4F 50%, #4CAF7D 100%);">
+    <div class="module-num-badge"><span>Étape</span><span style="font-size:1.1rem;">02</span></div>
+    <div class="module-planet-badge">♀ Vénus</div>
+    <div class="module-symbol">♉</div>
+    <div class="module-title">Le Taureau</div>
+    <div class="module-subtitle">L'Estimation</div>
+  </div>
+  <div class="module-body">
+    <div class="module-phrase" style="border-top: 3px solid #2D7D4F;">
+      <div class="module-phrase-text">« La valeur juste ne se négocie pas. Elle se connaît. »</div>
+      <div class="module-phrase-attr">Le Taureau · Étape 2</div>
+    </div>
+    <div class="module-grid">
+      <div>
+        <div class="module-section-title" style="color:#1A6040;">Ce que cette étape vous demande</div>
+        <ul class="module-list">
+          <li>Estimer votre bien avec des méthodes fiables (comparatifs, DVF…)</li>
+          <li>Distinguer valeur sentimentale et valeur marchande</li>
+          <li>Fixer un prix juste, ni surévalué ni sous-évalué</li>
+        </ul>
+      </div>
+      <div>
+        <div class="module-section-title" style="color:#1A6040;">L'énergie du Taureau</div>
+        <ul class="module-list">
+          <li>Signe de terre — ancrage, patience, sens du concret</li>
+          <li>Régi par Vénus : il aime la beauté et la valeur</li>
+          <li>Sa leçon : l'attachement peut aveugler la lucidité</li>
+        </ul>
+      </div>
+    </div>
+    <div class="module-georges-box">
+      <div class="module-georges-label">L'histoire de Georges</div>
+      « Trois devis d'agence. Trois estimations différentes. J'ai sorti ma calculatrice. 21 000 € de commission. Pour quoi, exactement ? »
+    </div>
+    <div class="module-question" style="background: linear-gradient(135deg, #1A6040, #4CAF7D);">
+      Quelle est la part de votre prix qui vient du marché — et celle qui vient de vos souvenirs ?
+    </div>
+    <div class="module-mireille">
+      <div class="module-mireille-label">Mireille dit</div>
+      « ''Prix à discuter'', ça veut dire ''je ne sais pas ce que ça vaut''. Et ça, les acheteurs le sentent. »
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     MODULE 3 — LES GÉMEAUX — FICHE INFO
+     Planète : Mercure · Couleur : Jaune citron/or
+════════════════════════════════════════ -->
+<div class="module">
+  <div class="module-banner" style="background: linear-gradient(135deg, #B8960A 0%, #D4AE18 50%, #EDD030 100%);">
+    <div class="module-num-badge"><span>Étape</span><span style="font-size:1.1rem;">03</span></div>
+    <div class="module-planet-badge">☿ Mercure</div>
+    <div class="module-symbol">♊</div>
+    <div class="module-title">Les Gémeaux</div>
+    <div class="module-subtitle">La Fiche Informative</div>
+  </div>
+  <div class="module-body">
+    <div class="module-phrase" style="border-top: 3px solid #D4AE18;">
+      <div class="module-phrase-text">« Les mots justes ouvrent les bonnes portes. »</div>
+      <div class="module-phrase-attr">Les Gémeaux · Étape 3</div>
+    </div>
+    <div class="module-grid">
+      <div>
+        <div class="module-section-title" style="color:#8A7010;">Ce que cette étape vous demande</div>
+        <ul class="module-list">
+          <li>Rédiger une fiche technique claire et complète</li>
+          <li>Rassembler tous les documents juridiques et administratifs</li>
+          <li>Être transparent pour rassurer les acheteurs dès le départ</li>
+        </ul>
+      </div>
+      <div>
+        <div class="module-section-title" style="color:#8A7010;">L'énergie des Gémeaux</div>
+        <ul class="module-list">
+          <li>Signe d'air — communication, agilité mentale</li>
+          <li>Régi par Mercure : maître des mots et des échanges</li>
+          <li>Sa leçon : clarté et précision valent mieux que bavardage</li>
+        </ul>
+      </div>
+    </div>
+    <div class="module-georges-box">
+      <div class="module-georges-label">L'histoire de Georges</div>
+      « Léa m'a dit : ''Papa, tu ne peux pas juste écrire ''belle maison avec jardin''. Les gens ont besoin de chiffres.'' Elle avait raison. »
+    </div>
+    <div class="module-question" style="background: linear-gradient(135deg, #B8960A, #EDD030); color: #2A1A00;">
+      Qu'est-ce que vous n'avez pas encore dit — sur votre bien, sur vous — que les acheteurs méritent de savoir ?
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     MODULE 4 — LE CANCER — MISE EN VALEUR
+     Planète : Lune · Couleur : Bleu argenté / blanc lunaire
+════════════════════════════════════════ -->
+<div class="module">
+  <div class="module-banner" style="background: linear-gradient(135deg, #3A5A7A 0%, #5A80A8 50%, #8AB0D0 100%);">
+    <div class="module-num-badge"><span>Étape</span><span style="font-size:1.1rem;">04</span></div>
+    <div class="module-planet-badge">☽ Lune</div>
+    <div class="module-symbol">♋</div>
+    <div class="module-title">Le Cancer</div>
+    <div class="module-subtitle">La Mise en Valeur</div>
+  </div>
+  <div class="module-body">
+    <div class="module-phrase" style="border-top: 3px solid #5A80A8;">
+      <div class="module-phrase-text">« On ne vend pas une maison. On libère un foyer. »</div>
+      <div class="module-phrase-attr">Le Cancer · Étape 4</div>
+    </div>
+    <div class="module-grid">
+      <div>
+        <div class="module-section-title" style="color:#3A5A7A;">Ce que cette étape vous demande</div>
+        <ul class="module-list">
+          <li>Désencombrer et dépersonnaliser chaque pièce</li>
+          <li>Mettre en scène votre bien (home staging émotionnel)</li>
+          <li>Honorer ce qui a été, pour lâcher avec grâce</li>
+        </ul>
+      </div>
+      <div>
+        <div class="module-section-title" style="color:#3A5A7A;">L'énergie du Cancer</div>
+        <ul class="module-list">
+          <li>Signe d'eau — émotions, mémoire, foyer</li>
+          <li>Régi par la Lune : rythmes, cycles, attachement</li>
+          <li>Sa leçon : lâcher prise est un acte d'amour, pas de trahison</li>
+        </ul>
+      </div>
+    </div>
+    <div class="module-georges-box">
+      <div class="module-georges-label">Le moment le plus difficile de Georges</div>
+      « La chambre de Léa. 24 ans de photos, de dessins d'enfants, de souvenirs collés au mur. On l'a refaite ensemble. On s'est dit des choses qu'on n'avait jamais osé dire. »
+    </div>
+    <div class="module-question" style="background: linear-gradient(135deg, #3A5A7A, #8AB0D0);">
+      Dans quelle pièce de votre maison y a-t-il quelque chose que vous n'êtes pas encore prêt·e à quitter ?
+    </div>
+    <div class="module-mireille">
+      <div class="module-mireille-label">Mireille dit</div>
+      « On range pas pour les acheteurs. On range pour soi. Pour leur laisser la place d'imaginer leur vie ici. »
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     MODULE 5 — LE LION — LES PHOTOS
+     Planète : Soleil · Couleur : Or solaire / ambre
+════════════════════════════════════════ -->
+<div class="module">
+  <div class="module-banner" style="background: linear-gradient(135deg, #C07010 0%, #E09030 50%, #FFB840 100%);">
+    <div class="module-num-badge"><span>Étape</span><span style="font-size:1.1rem;">05</span></div>
+    <div class="module-planet-badge">☀ Soleil</div>
+    <div class="module-symbol">♌</div>
+    <div class="module-title">Le Lion</div>
+    <div class="module-subtitle">Les Photos</div>
+  </div>
+  <div class="module-body">
+    <div class="module-phrase" style="border-top: 3px solid #E09030;">
+      <div class="module-phrase-text">« Chaque maison est un chef-d'œuvre qui attend d'être vu. »</div>
+      <div class="module-phrase-attr">Le Lion · Étape 5</div>
+    </div>
+    <div class="module-grid">
+      <div>
+        <div class="module-section-title" style="color:#A06010;">Ce que cette étape vous demande</div>
+        <ul class="module-list">
+          <li>Maîtriser la lumière naturelle (matin ou fin d'après-midi)</li>
+          <li>Cadrer avec intention — horizontale, stable, 3 plans par pièce</li>
+          <li>Mettre en valeur les atouts sans travestir la réalité</li>
+        </ul>
+      </div>
+      <div>
+        <div class="module-section-title" style="color:#A06010;">L'énergie du Lion</div>
+        <ul class="module-list">
+          <li>Signe de feu — création, expression, générosité</li>
+          <li>Régi par le Soleil : lumière, rayonnement, fierté</li>
+          <li>Sa leçon : ce qui brille vraiment n'a pas besoin d'être exagéré</li>
+        </ul>
+      </div>
+    </div>
+    <div class="module-georges-box">
+      <div class="module-georges-label">La fierté de Georges</div>
+      « Léa a regardé mes photos. ''Papa… elles sont vraiment belles.'' J'avais juste suivi les instructions. Lumière du matin. Trois plans. Et voilà. »
+    </div>
+    <div class="module-question" style="background: linear-gradient(135deg, #C07010, #FFB840); color: #2A1A00;">
+      Si vous deviez choisir UNE photo qui capture l'âme de votre maison — quel serait ce moment, cette lumière, cet angle ?
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     MODULE 6 — LA VIERGE — L'ANNONCE
+     Planète : Mercure · Couleur : Vert olive / céladon
+════════════════════════════════════════ -->
+<div class="module">
+  <div class="module-banner" style="background: linear-gradient(135deg, #4A6A20 0%, #6A8A38 50%, #8AAA50 100%);">
+    <div class="module-num-badge"><span>Étape</span><span style="font-size:1.1rem;">06</span></div>
+    <div class="module-planet-badge">☿ Mercure</div>
+    <div class="module-symbol">♍</div>
+    <div class="module-title">La Vierge</div>
+    <div class="module-subtitle">La Rédaction de l'Annonce</div>
+  </div>
+  <div class="module-body">
+    <div class="module-phrase" style="border-top: 3px solid #6A8A38;">
+      <div class="module-phrase-text">« Un détail peut tout changer. Écris pour être compris, pas pour impressionner. »</div>
+      <div class="module-phrase-attr">La Vierge · Étape 6</div>
+    </div>
+    <div class="module-grid">
+      <div>
+        <div class="module-section-title" style="color:#4A6A20;">Ce que cette étape vous demande</div>
+        <ul class="module-list">
+          <li>Rédiger un titre précis avec surface, ville, type de bien</li>
+          <li>Bannir les adjectifs vagues (''beau'', ''charmant'') — les remplacer par des faits</li>
+          <li>Structurer : atouts principaux → caractéristiques → appel à l'action</li>
+        </ul>
+      </div>
+      <div>
+        <div class="module-section-title" style="color:#4A6A20;">L'énergie de la Vierge</div>
+        <ul class="module-list">
+          <li>Signe de terre — analyse, précision, discernement</li>
+          <li>Régie par Mercure : mots choisis, rien de superflu</li>
+          <li>Sa leçon : la perfection n'est pas un détail — c'est une intention</li>
+        </ul>
+      </div>
+    </div>
+    <div class="module-georges-box">
+      <div class="module-georges-label">La leçon de Georges</div>
+      « J'avais écrit ''Belle maison, grand jardin, prix à discuter.'' Mireille m'a regardé. ''Vous venez d'inviter tous les négociateurs de France.'' »
+    </div>
+    <div class="module-question" style="background: linear-gradient(135deg, #4A6A20, #8AAA50);">
+      Si vous deviez décrire votre maison en une seule phrase à quelqu'un qui ne l'a jamais vue — laquelle choisiriez-vous ?
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     MODULE 7 — LA BALANCE — LA DIFFUSION
+     Planète : Vénus · Couleur : Rose poudré / pêche
+════════════════════════════════════════ -->
+<div class="module">
+  <div class="module-banner" style="background: linear-gradient(135deg, #A84868 0%, #C86888 50%, #E888A8 100%);">
+    <div class="module-num-badge"><span>Étape</span><span style="font-size:1.1rem;">07</span></div>
+    <div class="module-planet-badge">♀ Vénus</div>
+    <div class="module-symbol">♎</div>
+    <div class="module-title">La Balance</div>
+    <div class="module-subtitle">La Diffusion</div>
+  </div>
+  <div class="module-body">
+    <div class="module-phrase" style="border-top: 3px solid #C86888;">
+      <div class="module-phrase-text">« Visibilité sans surexposition — c'est tout l'art de la Balance. »</div>
+      <div class="module-phrase-attr">La Balance · Étape 7</div>
+    </div>
+    <div class="module-grid">
+      <div>
+        <div class="module-section-title" style="color:#A84868;">Ce que cette étape vous demande</div>
+        <ul class="module-list">
+          <li>Choisir les bonnes plateformes (LeBonCoin, SeLoger, PAP…)</li>
+          <li>Calibrer la visibilité : ne pas saturer, ne pas sous-exposer</li>
+          <li>Gérer le budget mise en avant avec méthode</li>
+        </ul>
+      </div>
+      <div>
+        <div class="module-section-title" style="color:#A84868;">L'énergie de la Balance</div>
+        <ul class="module-list">
+          <li>Signe d'air — harmonie, diplomatie, équilibre</li>
+          <li>Régie par Vénus : beauté, relation, choix éclairés</li>
+          <li>Sa leçon : choisir c'est renoncer — et c'est une force</li>
+        </ul>
+      </div>
+    </div>
+    <div class="module-question" style="background: linear-gradient(135deg, #A84868, #E888A8);">
+      Dans votre vie, avez-vous tendance à vous rendre trop visible ou pas assez ? Et qu'est-ce que ça dit de la façon dont vous présentez votre bien ?
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     MODULE 8 — LE SCORPION — CONTACTS
+     Planète : Pluton · Couleur : Bordeaux profond / grenat
+════════════════════════════════════════ -->
+<div class="module">
+  <div class="module-banner" style="background: linear-gradient(135deg, #5A0820 0%, #800A2A 50%, #A81040 100%);">
+    <div class="module-num-badge"><span>Étape</span><span style="font-size:1.1rem;">08</span></div>
+    <div class="module-planet-badge">♇ Pluton</div>
+    <div class="module-symbol">♏</div>
+    <div class="module-title">Le Scorpion</div>
+    <div class="module-subtitle">La Gestion des Contacts</div>
+  </div>
+  <div class="module-body">
+    <div class="module-phrase" style="border-top: 3px solid #800A2A;">
+      <div class="module-phrase-text">« L'intuition est ta boussole. La méfiance est ton piège. »</div>
+      <div class="module-phrase-attr">Le Scorpion · Étape 8</div>
+    </div>
+    <div class="module-grid">
+      <div>
+        <div class="module-section-title" style="color:#5A0820;">Ce que cette étape vous demande</div>
+        <ul class="module-list">
+          <li>Filtrer les curieux des acheteurs solvables et motivés</li>
+          <li>Poser les bonnes questions au téléphone avant la visite</li>
+          <li>Gérer les appels avec méthode sans perdre son énergie</li>
+        </ul>
+      </div>
+      <div>
+        <div class="module-section-title" style="color:#5A0820;">L'énergie du Scorpion</div>
+        <ul class="module-list">
+          <li>Signe d'eau — profondeur, transformation, pouvoir</li>
+          <li>Régi par Pluton : voir au-delà des apparences</li>
+          <li>Sa leçon : protéger sans se fermer — le courage d'ouvrir la porte</li>
+        </ul>
+      </div>
+    </div>
+    <div class="module-georges-box">
+      <div class="module-georges-label">Le moment de vérité de Georges</div>
+      « Le troisième appelant. Mireille m'avait prévenu : ''Monsieur Georges, quelqu'un qui demande d'abord la surface du grenier non aménagé... c'est pas un vrai acheteur.'' Elle avait raison. »
+    </div>
+    <div class="module-question" style="background: linear-gradient(135deg, #5A0820, #A81040);">
+      Avez-vous tendance à faire confiance trop vite ou pas assez ? Que vous dit cela de votre relation à la confiance en général ?
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     MODULE 9 — SAGITTAIRE — VISITES
+     Planète : Jupiter · Couleur : Violet royal / améthyste
+════════════════════════════════════════ -->
+<div class="module">
+  <div class="module-banner" style="background: linear-gradient(135deg, #4A2890 0%, #6B3DB5 50%, #8B5DD8 100%);">
+    <div class="module-num-badge"><span>Étape</span><span style="font-size:1.1rem;">09</span></div>
+    <div class="module-planet-badge">♃ Jupiter</div>
+    <div class="module-symbol">♐</div>
+    <div class="module-title">Le Sagittaire</div>
+    <div class="module-subtitle">Les Visites &amp; Négociations</div>
+  </div>
+  <div class="module-body">
+    <div class="module-phrase" style="border-top: 3px solid #6B3DB5;">
+      <div class="module-phrase-text">« Chaque visite est une aventure vers le bon acheteur. »</div>
+      <div class="module-phrase-attr">Le Sagittaire · Étape 9</div>
+    </div>
+    <div class="module-grid">
+      <div>
+        <div class="module-section-title" style="color:#4A2890;">Ce que cette étape vous demande</div>
+        <ul class="module-list">
+          <li>Préparer un circuit de visite qui raconte une histoire</li>
+          <li>Accueillir avec confiance — vous êtes l'expert de votre bien</li>
+          <li>Négocier avec vision : connaître son plancher, tenir sa valeur</li>
+        </ul>
+      </div>
+      <div>
+        <div class="module-section-title" style="color:#4A2890;">L'énergie du Sagittaire</div>
+        <ul class="module-list">
+          <li>Signe de feu — expansion, foi, vision lointaine</li>
+          <li>Régi par Jupiter : chance, générosité, enthousiasme</li>
+          <li>Sa leçon : la confiance attire ce qu'elle projette</li>
+        </ul>
+      </div>
+    </div>
+    <div class="module-question" style="background: linear-gradient(135deg, #4A2890, #8B5DD8);">
+      Quand un inconnu entre dans votre espace, que ressentez-vous ? Comment cela va-t-il influencer votre façon de guider la visite ?
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     MODULE 10 — CAPRICORNE — OFFRE D'ACHAT
+     Planète : Saturne · Couleur : Gris anthracite / ardoise
+════════════════════════════════════════ -->
+<div class="module">
+  <div class="module-banner" style="background: linear-gradient(135deg, #2A2A3A 0%, #3A3A50 50%, #5A5A70 100%);">
+    <div class="module-num-badge"><span>Étape</span><span style="font-size:1.1rem;">10</span></div>
+    <div class="module-planet-badge">♄ Saturne</div>
+    <div class="module-symbol">♑</div>
+    <div class="module-title">Le Capricorne</div>
+    <div class="module-subtitle">L'Offre d'Achat</div>
+  </div>
+  <div class="module-body">
+    <div class="module-phrase" style="border-top: 3px solid #3A3A50;">
+      <div class="module-phrase-text">« La patience est la mère de toutes les décisions justes. »</div>
+      <div class="module-phrase-attr">Le Capricorne · Étape 10</div>
+    </div>
+    <div class="module-grid">
+      <div>
+        <div class="module-section-title" style="color:#3A3A50;">Ce que cette étape vous demande</div>
+        <ul class="module-list">
+          <li>Analyser l'offre dans sa globalité (prix, conditions, délais)</li>
+          <li>Ne pas accepter la première offre par soulagement</li>
+          <li>Contre-proposer avec méthode et discernement</li>
+        </ul>
+      </div>
+      <div>
+        <div class="module-section-title" style="color:#3A3A50;">L'énergie du Capricorne</div>
+        <ul class="module-list">
+          <li>Signe de terre — responsabilité, ambition, durée</li>
+          <li>Régi par Saturne : structure, maturité, limite</li>
+          <li>Sa leçon : tenir ses engagements commence par tenir sa valeur</li>
+        </ul>
+      </div>
+    </div>
+    <div class="module-georges-box">
+      <div class="module-georges-label">Le test de maturité de Georges</div>
+      « L'offre est arrivée. En dessous de mon prix. Mon premier réflexe : accepter pour en finir. Le Capricorne m'a dit : attends. J'ai attendu. L'acheteur a remonté son offre. »
+    </div>
+    <div class="module-question" style="background: linear-gradient(135deg, #2A2A3A, #5A5A70);">
+      Avez-vous tendance à céder trop vite pour éviter le conflit ? Qu'est-ce que cela vous coûte — en immobilier et dans votre vie ?
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     MODULE 11 — VERSEAU — LE COMPROMIS
+     Planète : Uranus · Couleur : Bleu électrique / azur
+════════════════════════════════════════ -->
+<div class="module">
+  <div class="module-banner" style="background: linear-gradient(135deg, #0A4A90 0%, #1A6AB5 50%, #2A8AE8 100%);">
+    <div class="module-num-badge"><span>Étape</span><span style="font-size:1.1rem;">11</span></div>
+    <div class="module-planet-badge">♅ Uranus</div>
+    <div class="module-symbol">♒</div>
+    <div class="module-title">Le Verseau</div>
+    <div class="module-subtitle">La Signature du Compromis</div>
+  </div>
+  <div class="module-body">
+    <div class="module-phrase" style="border-top: 3px solid #1A6AB5;">
+      <div class="module-phrase-text">« Ce que tu signes, c'est ta liberté. »</div>
+      <div class="module-phrase-attr">Le Verseau · Étape 11</div>
+    </div>
+    <div class="module-grid">
+      <div>
+        <div class="module-section-title" style="color:#0A4A90;">Ce que cette étape vous demande</div>
+        <ul class="module-list">
+          <li>Comprendre les clauses essentielles du compromis</li>
+          <li>Vérifier les conditions suspensives (financement, urbanisme…)</li>
+          <li>Signer en conscience — ni précipitation, ni paralysie</li>
+        </ul>
+      </div>
+      <div>
+        <div class="module-section-title" style="color:#0A4A90;">L'énergie du Verseau</div>
+        <ul class="module-list">
+          <li>Signe d'air — liberté, innovation, vision collective</li>
+          <li>Régi par Uranus : ruptures créatrices, renouveau</li>
+          <li>Sa leçon : les règles existent pour être comprises, pas subies</li>
+        </ul>
+      </div>
+    </div>
+    <div class="module-question" style="background: linear-gradient(135deg, #0A4A90, #2A8AE8);">
+      Qu'est-ce que cette vente va rendre possible dans votre vie que vous n'osez pas encore vous avouer ?
+    </div>
+    <div class="module-mireille">
+      <div class="module-mireille-label">Mireille dit</div>
+      « Un compromis, c'est une promesse mutuelle. La lire, c'est respecter tout le monde — vous, l'acheteur, et l'avocat du diable. »
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     MODULE 12 — LES POISSONS — SIGNATURE
+     Planète : Neptune · Couleur : Bleu lavande / indigo doux
+════════════════════════════════════════ -->
+<div class="module">
+  <div class="module-banner" style="background: linear-gradient(135deg, #3A2A6A 0%, #5A488A 50%, #7A68AA 100%);">
+    <div class="module-num-badge"><span>Étape</span><span style="font-size:1.1rem;">12</span></div>
+    <div class="module-planet-badge">♆ Neptune</div>
+    <div class="module-symbol">♓</div>
+    <div class="module-title">Les Poissons</div>
+    <div class="module-subtitle">La Signature</div>
+  </div>
+  <div class="module-body">
+    <div class="module-phrase" style="border-top: 3px solid #5A488A;">
+      <div class="module-phrase-text">« Ce n'est pas une fin. C'est une naissance. »</div>
+      <div class="module-phrase-attr">Les Poissons · Étape 12</div>
+    </div>
+    <div class="module-grid">
+      <div>
+        <div class="module-section-title" style="color:#3A2A6A;">Ce que cette étape vous demande</div>
+        <ul class="module-list">
+          <li>Préparer l'acte authentique avec le notaire</li>
+          <li>Rassembler les derniers documents et les clés</li>
+          <li>Vivre la remise des clés comme un passage conscient</li>
+        </ul>
+      </div>
+      <div>
+        <div class="module-section-title" style="color:#3A2A6A;">L'énergie des Poissons</div>
+        <ul class="module-list">
+          <li>Signe d'eau — transcendance, intuition, dissolution</li>
+          <li>Régi par Neptune : rêves, cycles, l'au-delà du visible</li>
+          <li>Sa leçon : accepter la fin d'un cycle, c'est honorer tout ce qui fut</li>
+        </ul>
+      </div>
+    </div>
+    <div class="module-georges-box">
+      <div class="module-georges-label">Le plus beau jour de Georges</div>
+      « Je pensais que ce serait le jour le plus triste de ma vie. Léa était là. J'ai signé. J'ai remis les clés. Et j'ai souri. Ce n'était pas une perte. C'était une libération. »
+    </div>
+    <div class="module-question" style="background: linear-gradient(135deg, #3A2A6A, #7A68AA);">
+      Qui serez-vous, de l'autre côté de cette signature ? Qu'est-ce que cette maison vous aura appris ?
+    </div>
+    <div class="module-mireille">
+      <div class="module-mireille-label">Le mot de la fin de Mireille</div>
+      « Monsieur Georges… je suis fière de vous. Et maintenant, allez vivre. »
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PAGE QUIZ ═══ -->
+<div class="quiz-page">
+  <h2>Quel Zodiacome vous guide en ce moment ?</h2>
+  <p class="sub">Répondez à ces 4 questions pour identifier vos guides prioritaires.</p>
+  <div class="quiz-questions">
+    <div class="quiz-q">
+      <div class="quiz-q-title">Où en êtes-vous dans votre projet ?</div>
+      <div class="quiz-option"><div class="quiz-circle"></div>Je réfléchis encore</div>
+      <div class="quiz-option"><div class="quiz-circle"></div>Je me prépare à vendre</div>
+      <div class="quiz-option"><div class="quiz-circle"></div>Ma vente est en cours</div>
+      <div class="quiz-option"><div class="quiz-circle"></div>Je suis bloqué·e</div>
+    </div>
+    <div class="quiz-q">
+      <div class="quiz-q-title">Votre plus grande crainte ?</div>
+      <div class="quiz-option"><div class="quiz-circle"></div>Mal estimer le prix</div>
+      <div class="quiz-option"><div class="quiz-circle"></div>Les démarches juridiques</div>
+      <div class="quiz-option"><div class="quiz-circle"></div>L'aspect émotionnel</div>
+      <div class="quiz-option"><div class="quiz-circle"></div>Les mauvais acheteurs</div>
+    </div>
+    <div class="quiz-q">
+      <div class="quiz-q-title">Votre signe du zodiaque natal ?</div>
+      <div class="quiz-option"><div class="quiz-circle"></div>♈ ♉ ♊ ♋ (Bélier à Cancer)</div>
+      <div class="quiz-option"><div class="quiz-circle"></div>♌ ♍ ♎ ♏ (Lion à Scorpion)</div>
+      <div class="quiz-option"><div class="quiz-circle"></div>♐ ♑ ♒ ♓ (Sagittaire à Poissons)</div>
+    </div>
+    <div class="quiz-q">
+      <div class="quiz-q-title">En combien de temps souhaitez-vous vendre ?</div>
+      <div class="quiz-option"><div class="quiz-circle"></div>Moins de 3 mois</div>
+      <div class="quiz-option"><div class="quiz-circle"></div>3 à 6 mois</div>
+      <div class="quiz-option"><div class="quiz-circle"></div>Plus de 6 mois</div>
+      <div class="quiz-option"><div class="quiz-circle"></div>Je ne sais pas encore</div>
+    </div>
+  </div>
+  <div style="color:rgba(255,255,255,0.5); font-size:13px; max-width:500px; margin:0 auto;">Apportez vos réponses lors de votre premier live collectif mensuel — votre équipe AUTON'HOME vous orientera vers vos Zodiacomes guides.</div>
+</div>
+
+<!-- ═══ PAGE PROGRAMME ═══ -->
+<div class="programme-page">
+  <div class="intro-eyebrow" style="font-size:11px; text-transform:uppercase; letter-spacing:2px; color:#C9A84C; margin-bottom:1rem;">Allez plus loin</div>
+  <h2>Le Programme Complet AUTON'HOME</h2>
+  <p class="sub">Ce guide est votre première rencontre. Le programme vous accompagne à chaque étape — en profondeur.</p>
+  <div class="forfait-grid">
+    <div class="forfait">
+      <div class="forfait-name">Formule Autonomie</div>
+      <div class="forfait-price">1 497 € <span>en 3 fois · 499 €/mois</span></div>
+      <ul class="forfait-features">
+        <li><span class="feat-check">✓</span>12 modules complets (méthode immobilière)</li>
+        <li><span class="feat-check">✓</span>Numérologie vibratoire incluse</li>
+          <li><span class="feat-check">✓</span>1 live collectif mensuel</li>
+        <li><span class="feat-check">✓</span>Communauté privée</li>
+        <li><span class="feat-check">✓</span>Ressources téléchargeables</li>
+        <li><span class="feat-check">✓</span>Sans accompagnement individuel</li>
+      </ul>
+    </div>
+    <div class="forfait premium">
+      <div class="forfait-badge">⭐ Recommandée</div>
+      <div class="forfait-name">Formule Souveraineté</div>
+      <div class="forfait-price">2 297 € <span>en 4 fois · 574,25 €/mois</span></div>
+      <ul class="forfait-features">
+        <li><span class="feat-check">✓</span>Tout le Formule Autonomie</li>
+        <li><span class="feat-check">✓</span>12h d'accompagnement individuel (1h/module)</li>
+        <li><span class="feat-check">✓</span>Suivi personnalisé tout au long du parcours</li>
+        <li><span class="feat-check">✓</span>Accès prioritaire à l'équipe AUTON'HOME</li>
+        <li><span class="feat-check">✓</span>Visio individuelle · Rythme personnalisé</li>
+      </ul>
+    </div>
+  </div>
+  <div class="garantie">
+    <strong>Garantie 30 jours satisfait ou remboursé</strong> — Les Zodiacomes by AUTON'HOME · Association loi 1908 · 22.05.2026
+  </div>
+  <a href="https://VOTRE-TUNNEL.systeme.io/inscription" style="display:inline-block; background:linear-gradient(135deg,#C9A84C,#E8D49A); color:#1A0A2E; font-weight:500; font-size:14px; padding:14px 36px; border-radius:4px; text-decoration:none; margin-top:1rem;">Rejoindre le programme →</a>
+</div>
+
+<!-- ═══ TEASER SAYNETTES ═══ -->
+<div class="teaser-page">
+  <h2>L'aventure de Georges arrive sur vos écrans</h2>
+  <p class="sub">36 épisodes. 12 semaines. Une vraie histoire de famille, d'immobilier — et de transformation.</p>
+  <div class="network-badges">
+    <div class="net-badge">📱 Instagram</div>
+    <div class="net-badge">🎵 TikTok</div>
+    <div class="net-badge">👥 Facebook</div>
+  </div>
+  <p style="color:rgba(255,255,255,0.5); font-size:13px; margin-bottom:1.5rem;">Chaque semaine, 3 nouvelles saynètes — lundi, mercredi, vendredi à 18h30.</p>
+  <div class="sept-badge">Septembre 2026</div>
+  <p style="color:rgba(255,255,255,0.35); font-size:12px; margin-top:1.5rem;">Suivez @leszodiacomes sur tous les réseaux pour ne rien manquer.</p>
+</div>
+
+<!-- ═══ 4E COUVERTURE ═══ -->
+<div class="back-cover">
+  <div class="logo-zone">
+    <div style="font-size:2.5rem; letter-spacing:0.5rem; color:rgba(255,255,255,0.15); margin-bottom:1rem;">♈ ♉ ♊ ♋ ♌ ♍ ♎ ♏ ♐ ♑ ♒ ♓</div>
+  </div>
+  <div class="tagline">« Vendez en conscience. Vendez en autonomie. »</div>
+  <div class="assoc">Les Zodiacomes by AUTON'HOME · Association loi 1908 · 22.05.2026</div>
+  <div class="url">LESZODIACOMES.COM</div>
+  <div style="font-size:11px; color:rgba(255,255,255,0.2); margin-top:2rem; max-width:500px; margin-left:auto; margin-right:auto; line-height:1.6;">
+    Ce guide est mis à disposition gratuitement par Les Zodiacomes by AUTON'HOME · Association loi 1908 · 22.05.2026. Il est strictement informatif et ne constitue pas un conseil juridique ou financier. Toutes les informations relatives aux diagnostics immobiliers sont données à titre indicatif — consultez un professionnel certifié.
+  </div>
+</div>
+
+</body>
+</html>
