@@ -947,34 +947,36 @@ body { font-family: 'DM Sans', sans-serif; background: #F8F4EE; color: #2A2440; 
   <p class="sub">Répondez à ces 4 questions pour identifier vos guides prioritaires.</p>
   <div class="quiz-questions">
     <div class="quiz-q">
-      <div class="quiz-q-title">Où en êtes-vous dans votre projet ?</div>
-      <div class="quiz-option"><div class="quiz-circle"></div>Je réfléchis encore</div>
-      <div class="quiz-option"><div class="quiz-circle"></div>Je me prépare à vendre</div>
-      <div class="quiz-option"><div class="quiz-circle"></div>Ma vente est en cours</div>
-      <div class="quiz-option"><div class="quiz-circle"></div>Je suis bloqué·e</div>
-    </div>
+        <div class="quiz-q-title">Où en êtes-vous dans votre projet ?</div>
+        <div class="quiz-option" onclick="selectOption(this,'q1','1')"><div class="quiz-circle"></div>Je réfléchis encore</div>
+        <div class="quiz-option" onclick="selectOption(this,'q1','2')"><div class="quiz-circle"></div>Je me prépare à vendre</div>
+        <div class="quiz-option" onclick="selectOption(this,'q1','3')"><div class="quiz-circle"></div>Ma vente est en cours</div>
+        <div class="quiz-option" onclick="selectOption(this,'q1','4')"><div class="quiz-circle"></div>Je suis bloqué·e</div>
+      </div>
     <div class="quiz-q">
-      <div class="quiz-q-title">Votre plus grande crainte ?</div>
-      <div class="quiz-option"><div class="quiz-circle"></div>Mal estimer le prix</div>
-      <div class="quiz-option"><div class="quiz-circle"></div>Les démarches juridiques</div>
-      <div class="quiz-option"><div class="quiz-circle"></div>L'aspect émotionnel</div>
-      <div class="quiz-option"><div class="quiz-circle"></div>Les mauvais acheteurs</div>
+     <div class="quiz-q">
+        <div class="quiz-q-title">Votre plus grande crainte ?</div>
+        <div class="quiz-option" onclick="selectOption(this,'q2','1')"><div class="quiz-circle"></div>Mal estimer le prix</div>
+        <div class="quiz-option" onclick="selectOption(this,'q2','4')"><div class="quiz-circle"></div>Les démarches juridiques</div>
+        <div class="quiz-option" onclick="selectOption(this,'q2','2')"><div class="quiz-circle"></div>L'aspect émotionnel</div>
+        <div class="quiz-option" onclick="selectOption(this,'q2','3')"><div class="quiz-circle"></div>Les mauvais acheteurs</div>
+      </div>
+      </div>
+      <div class="quiz-q">
+        <div class="quiz-q-title">En combien de temps souhaitez-vous vendre ?</div>
+        <div class="quiz-option" onclick="selectOption(this,'q3','urgent')"><div class="quiz-circle"></div>Moins de 3 mois</div>
+        <div class="quiz-option" onclick="selectOption(this,'q3','normal')"><div class="quiz-circle"></div>3 à 6 mois</div>
+        <div class="quiz-option" onclick="selectOption(this,'q3','long')"><div class="quiz-circle"></div>Plus de 6 mois</div>
+        <div class="quiz-option" onclick="selectOption(this,'q3','unknown')"><div class="quiz-circle"></div>Je ne sais pas encore</div>
+      </div>
+ <button onclick="calculerProfil()" style="margin-top:1.5rem; padding:0.8rem 2rem; background:#3A2A6A; color:#FFFFFF; border:none; border-radius:8px; font-size:1rem; cursor:pointer;">Voir mon profil</button>
+
+    <div id="quiz-result" style="display:none; margin-top:2rem; padding:2rem; background:rgba(255,255,255,0.05); border-radius:12px; text-align:center;">
+      <div id="quiz-result-title" style="font-size:1.4rem; font-weight:bold; color:#FFFFFF; margin-bottom:1rem;"></div>
+      <div id="quiz-result-text" style="color:#E0E0E0; margin-bottom:1.5rem;"></div>
+      <div id="systeme-io-form-placeholder"></div>
     </div>
-    <div class="quiz-q">
-      <div class="quiz-q-title">Votre signe du zodiaque natal ?</div>
-      <div class="quiz-option"><div class="quiz-circle"></div>♈ ♉ ♊ ♋ (Bélier à Cancer)</div>
-      <div class="quiz-option"><div class="quiz-circle"></div>♌ ♍ ♎ ♏ (Lion à Scorpion)</div>
-      <div class="quiz-option"><div class="quiz-circle"></div>♐ ♑ ♒ ♓ (Sagittaire à Poissons)</div>
-    </div>
-    <div class="quiz-q">
-      <div class="quiz-q-title">En combien de temps souhaitez-vous vendre ?</div>
-      <div class="quiz-option"><div class="quiz-circle"></div>Moins de 3 mois</div>
-      <div class="quiz-option"><div class="quiz-circle"></div>3 à 6 mois</div>
-      <div class="quiz-option"><div class="quiz-circle"></div>Plus de 6 mois</div>
-      <div class="quiz-option"><div class="quiz-circle"></div>Je ne sais pas encore</div>
-    </div>
-  </div>
-  <div style="color:rgba(255,255,255,0.5); font-size:13px; max-width:500px; margin:0 auto;">Apportez vos réponses lors de votre premier live collectif mensuel  votre équipe AUTON'HOME vous orientera vers vos Zodiacomes guides.</div>
+ 
 </div>
 
 <!-- ═══ PAGE PROGRAMME ═══ -->
@@ -1039,7 +1041,42 @@ body { font-family: 'DM Sans', sans-serif; background: #F8F4EE; color: #2A2440; 
   <div style="font-size:11px; color:rgba(255,255,255,0.2); margin-top:2rem; max-width:500px; margin-left:auto; margin-right:auto; line-height:1.6;">
     Ce guide est mis à disposition gratuitement par Les Zodiacomes by AUTON'HOME · Association loi 1908 · 22.05.2026. Il est strictement informatif et ne constitue pas un conseil juridique ou financier. Toutes les informations relatives aux diagnostics immobiliers sont données à titre indicatif — consultez un professionnel certifié.
   </div>
-</div>
+<script>
+const quizSelections = {};
 
-</body>
-</html>
+function selectOption(el, question, profile) {
+  quizSelections[question] = profile;
+  const siblings = el.parentElement.querySelectorAll('.quiz-option');
+  siblings.forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+const profils = {
+  1: { titre: "Votre profil : Le Préparateur", texte: "Vous êtes au début du chemin. Avant de vendre, il s'agit de poser des bases solides : diagnostics, estimation juste, mise en valeur du bien. Les modules Bélier, Taureau et Gémeaux vous seront particulièrement utiles." },
+  2: { titre: "Votre profil : Le Révélateur", texte: "Votre bien est prêt à être montré — et vous, à le raconter. Les modules Cancer, Lion et Vierge vous aideront à faire vivre l'émotion du lieu et à organiser les visites." },
+  3: { titre: "Votre profil : Le Négociateur", texte: "Vous êtes en plein cœur du rapport de force. Les modules Balance, Scorpion et Sagittaire vous accompagnent dans la négociation, la gestion des offres et la prise de décision." },
+  4: { titre: "Votre profil : Le Passant", texte: "Vous touchez à la fin du parcours — matériellement ou émotionnellement. Les modules Capricorne, Verseau et Poissons vous guident vers la signature et la transition." }
+};
+
+function calculerProfil() {
+  if (!quizSelections.q1 || !quizSelections.q2) {
+    alert("Merci de répondre aux deux premières questions avant de voir votre profil.");
+    return;
+  }
+  const scores = {1:0, 2:0, 3:0, 4:0};
+  scores[quizSelections.q1]++;
+  scores[quizSelections.q2]++;
+
+  let profilGagnant = quizSelections.q1;
+  let maxScore = 0;
+  for (const [p, s] of Object.entries(scores)) {
+    if (s > maxScore) { maxScore = s; profilGagnant = p; }
+  }
+
+  const resultat = profils[profilGagnant];
+  document.getElementById('quiz-result-title').textContent = resultat.titre;
+  document.getElementById('quiz-result-text').textContent = resultat.texte;
+  document.getElementById('quiz-result').style.display = 'block';
+  document.getElementById('quiz-result').scrollIntoView({behavior: 'smooth'});
+}
+</script>
